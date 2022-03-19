@@ -5,6 +5,7 @@ import Square from "./Square";
 function Board() {
 
   const [count, setCount] = useState(0);
+  let squares = [null] * 9;
 
   function getTurn() {
     if (count % 2 == 0) {
@@ -16,7 +17,7 @@ function Board() {
 
   let status = `Next player: ${getTurn()}`;
 
-  function handleClick() {
+  function handleClick(i) {
     setCount(count + 1);
   }
 
