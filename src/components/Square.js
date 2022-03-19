@@ -26,7 +26,7 @@ function Square(props) {
     const [squareText, setSquareText] = useState(" ");
 
     function getText(props) {
-        if ((props.count % 2) == 0) {
+        if ((props.count % 2) === 0) {
             return "X";
         } else {
             return "O";
@@ -35,10 +35,11 @@ function Square(props) {
 
     return (
         <button className="square" onClick={() => {
-            if (clicked == false) {
+            if (clicked === false) {
                 setClicked(true);
-                props.func();
                 setSquareText(getText(props));
+                props.func(props.num);
+                props.check(props.squares);
             }
         }}>
             {squareText}
